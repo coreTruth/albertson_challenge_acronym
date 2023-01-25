@@ -1,0 +1,16 @@
+package com.joshua.test.data
+
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.joshua.test.data.model.ApiAcronymResponse
+import javax.inject.Inject
+
+class FakeDataSource @Inject constructor(){
+    private val ibmResponse =
+        "[{\"sf\": \"IBM\", \"lfs\": [{\"lf\": \"inclusion body myositis\", \"freq\": 233, \"since\": 1978, \"vars\": [{\"lf\": \"inclusion body myositis\", \"freq\": 151, \"since\": 1978}, {\"lf\": \"Inclusion body myositis\", \"freq\": 49, \"since\": 1983}, {\"lf\": \"inclusion-body myositis\", \"freq\": 31, \"since\": 1992}, {\"lf\": \"Inclusion-body myositis\", \"freq\": 2, \"since\": 2003}]}, {\"lf\": \"individual-based model\", \"freq\": 22, \"since\": 2001, \"vars\": [{\"lf\": \"individual-based model\", \"freq\": 10, \"since\": 2001}, {\"lf\": \"individual-based modelling\", \"freq\": 3, \"since\": 2001}, {\"lf\": \"individual based modeling\", \"freq\": 2, \"since\": 2004}, {\"lf\": \"individual based model\", \"freq\": 2, \"since\": 2005}, {\"lf\": \"Individual-based Modelling\", \"freq\": 2, \"since\": 2006}, {\"lf\": \"Individual-based modelling\", \"freq\": 1, \"since\": 2002}, {\"lf\": \"Individual-based modeling\", \"freq\": 1, \"since\": 2007}, {\"lf\": \"individual-based modeling\", \"freq\": 1, \"since\": 2004}]}, {\"lf\": \"intra-bone marrow\", \"freq\": 14, \"since\": 2001, \"vars\": [{\"lf\": \"intra-bone marrow\", \"freq\": 12, \"since\": 2001}, {\"lf\": \"Intra-bone marrow\", \"freq\": 1, \"since\": 2004}, {\"lf\": \"intra-bone-marrow\", \"freq\": 1, \"since\": 2007}]}, {\"lf\": \"Intimate Bond Measure\", \"freq\": 8, \"since\": 1988, \"vars\": [{\"lf\": \"Intimate Bond Measure\", \"freq\": 8, \"since\": 1988}]}, {\"lf\": \"index of body mass\", \"freq\": 7, \"since\": 1983, \"vars\": [{\"lf\": \"index of body mass\", \"freq\": 4, \"since\": 1989}, {\"lf\": \"ideal body mass\", \"freq\": 3, \"since\": 1983}]}, {\"lf\": \"International Business Machines\", \"freq\": 5, \"since\": 1967, \"vars\": [{\"lf\": \"International Business Machines\", \"freq\": 4, \"since\": 1967}, {\"lf\": \"International Business Machine\", \"freq\": 1, \"since\": 1995}]}, {\"lf\": \"insoluble bone matrix\", \"freq\": 5, \"since\": 1993, \"vars\": [{\"lf\": \"insoluble bone matrix\", \"freq\": 5, \"since\": 1993}]}, {\"lf\": \"IAP-binding motif\", \"freq\": 5, \"since\": 2004, \"vars\": [{\"lf\": \"IAP-binding motif\", \"freq\": 3, \"since\": 2005}, {\"lf\": \"IAP-binding-motifs\", \"freq\": 1, \"since\": 2007}, {\"lf\": \"IAP binding motif\", \"freq\": 1, \"since\": 2004}]}, {\"lf\": \"inner boundary membrane\", \"freq\": 4, \"since\": 2002, \"vars\": [{\"lf\": \"inner boundary membrane\", \"freq\": 4, \"since\": 2002}]}, {\"lf\": \"Incidence-based mortality\", \"freq\": 3, \"since\": 1999, \"vars\": [{\"lf\": \"Incidence-based mortality\", \"freq\": 2, \"since\": 1999}, {\"lf\": \"incidence-based mortality\", \"freq\": 1, \"since\": 2007}]}, {\"lf\": \"intermated B73 x Mo17\", \"freq\": 3, \"since\": 2002, \"vars\": [{\"lf\": \"intermated B73 x Mo17\", \"freq\": 3, \"since\": 2002}]}]}]"
+
+    fun getAcronyms(query: String): List<ApiAcronymResponse> {
+        val type = object : TypeToken<List<ApiAcronymResponse>>() {}.type
+        return Gson().fromJson(ibmResponse, type)
+    }
+}

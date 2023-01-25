@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Acronym App</string>
+    <string name="submit">Submit</string>
+    <string name="enter_acronym">Enter Acronym</string>
+    <string name="variations">Variations</string>
+    <string name="frequency_formatted">Frequency: %d</string>
+    <string name="since_formatted">Since: %d</string>
+    <string name="variations_count_formatted">Variations: %d</string>
+    <string name="no_acronyms_long_form_found">No data received against your query</string>
+    <string name="icon_move_detail">Move Detail Icon</string>
+</resources>
